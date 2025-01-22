@@ -1,0 +1,52 @@
+<html>
+
+	<head>
+		<title> Day1 </title>
+	</head>
+
+	<body>
+		Hello Everyone
+		<b> Hello World </b>
+		<u> Welcome to India </u>
+		<i> Hello Guys </i>
+		
+		<br />
+
+		<u>
+			<b> Welcome Everyone </b>
+			How are you ??	
+		</u>
+		
+		<i>
+			<b> Welcome to WsCubTech </b>
+			Hello Students
+		</i>
+		<br/>		
+
+		<i>
+			<b>
+				<u> Hello Everyone </u>
+				How are you ?
+			</b>
+		</i>
+	
+		<hr />
+		
+		<h1> This is heading 1 </h1>	
+		<h2> This is heading 2 </h2>
+		<h3> This is heading 3 </h3>
+		<h4> This is heading 4 </h4>
+		<h5> This is heading 5 </h5>
+		<h6> This is heading 6 </h6>
+
+		<center> Hello Everyone </center>
+	
+		<p> 
+			WsCube Tech is a great institute. All the teachers are friendly in nature and have high knowledge of the IT field.They have all the facility like projecter class and also have lab for our practicle practice. I got lots of knowledge regarding my course and also got some extra advice and help for my future planning in this field.
+			
+ 		</p>
+	
+
+	</body>
+	
+</html>

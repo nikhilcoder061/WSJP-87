@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            width: 700px;
+            background-color: lightblue;
+            margin: auto;
+        }
+
+        .header>ul {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+        }
+
+        .header>ul>li {
+            padding: 10px 15px;
+            background-color: orange;
+        }
+
+        .menu {
+            position: relative;
+        }
+
+        .menu ul {
+            list-style: none;
+            position: absolute;
+            background-color: blue;
+            top: 100%;
+            left: 0px;
+            transition: 0.2s;
+            opacity: 0;
+        }
+
+        .menu li {
+            width: 100px;
+            padding: 10px 5px;
+        }
+
+        .menu li:hover {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        .menu:hover ul {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <ul>
+            <li>Home</li>
+            <li>About </li>
+            <li class="menu">Course
+                <ul>
+                    <li> <a href=""> HTML </a></li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React Js</li>
+                    <li>Tailwind</li>
+                </ul>
+            </li>
+            <li>Gallery </li>
+            <li>Contact </li>
+        </ul>
+
+    </div>
+
+
+</body>
+
+</html>
