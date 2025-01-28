@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 1000px;
+            height: 500px;
+            border: 1px solid red;
+            margin: auto;
+        }
+
+        .box {
+            width: 600px;
+            height: 300px;
+            border: 1px solid black;
+            text-align: center;
+            transition: 0.5s;
+            transform-style: preserve-3d;
+            display: flex;
+            position: relative;
+        }
+
+        .img {
+            width: 300px;
+            height: 300px;
+            transition: 0.5s;
+            backface-visibility: hidden;
+        }
+
+        .para {
+            background-color: lightcoral;
+            width: 300px;
+            height: 300px;
+            text-align: justify;
+            padding: 20px;
+            transform: rotateY(180deg);
+            transition: 0.5s;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .box:hover .para {
+            transform: rotateY(0deg);
+        }
+
+        .box:hover .img {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="box">
+            <div class="img">
+                <img src="https://picsum.photos/id/232/300/300" alt="">
+            </div>
+            <div class="para">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe cum ad, debitis sequi quidem, at
+                    laudantium necessitatibus tenetur totam odit omnis provident id soluta nihil eos voluptatibus autem
+                    exercitationem quis.
+                    laudantium necessitatibus tenetur totam odit omnis provident id soluta nihil eos voluptatibus autem
+                    exercitationem quis.
+                    exercitationem quis.
+                    laudantium necessitatibus tenetur totam odit omnis provident id soluta nihil eos voluptatibus autem
+                    exercitationem quis.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
