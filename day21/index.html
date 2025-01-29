@@ -11,9 +11,10 @@
             height: 600px;
             border: 1px solid black;
             position: relative;
+            margin: auto;
         }
 
-        @keyframes run1 {
+        @keyframes box1 {
 
             0%,
             100% {
@@ -21,71 +22,112 @@
             }
 
             25% {
-                transform: translate(1000px, 0px);
+                transform: translate(1100px, 0px);
             }
 
             50% {
-                transform: translate(1000px, 400px);
+                transform: translate(1100px, 500px);
             }
 
             75% {
-                transform: translate(0px, 400px);
+                transform: translate(0px, 500px);
             }
 
         }
 
-        @keyframes run2 {
+        @keyframes box2 {
 
             0%,
             100% {
-                transform: translate(0px);
+                transform: translate(1100px, 0px);
             }
 
             25% {
-                transform: translate(0px, 400px);
+                transform: translate(1100px, 500px);
             }
 
             50% {
-                transform: translate(-1000px, 0px);
+                transform: translate(0px, 500px);
             }
 
             75% {
-                transform: translate(0px, -1000px);
+                transform: translate(0px, 0px);
+            }
+
+        }
+
+        @keyframes box3 {
+
+            0%,
+            100% {
+                transform: translate(1100px, 500px);
+            }
+
+            25% {
+                transform: translate(0px, 500px);
+            }
+
+            50% {
+                transform: translate(0px, 0px);
+            }
+
+            75% {
+                transform: translate(1100px, 0px);
+            }
+
+        }
+
+        @keyframes box4 {
+
+            0%,
+            100% {
+                transform: translate(0px, 500px);
+            }
+
+            25% {
+                transform: translate(0px, 0px);
+            }
+
+            50% {
+                transform: translate(1100px, 0px);
+            }
+
+            75% {
+                transform: translate(1100px, 500px);
             }
 
         }
 
         .box {
-            width: 200px;
-            height: 200px;
+            width: 100px;
+            height: 100px;
             position: absolute;
-            top: 0px;
-            left: 0px;
-
+            top: 0;
+            left: 0;
         }
 
         .box1 {
             background-color: red;
-            animation: run1 2s;
+            animation: box1 4s infinite linear;
         }
 
         .box2 {
             background-color: blue;
-            top: 0px;
-            left: 1000px;
-            animation: run2 2s;
+            transform: translate(1100px, 0px);
+            animation: box2 4s infinite linear;
         }
 
         .box3 {
             background-color: green;
-            top: 400px;
-            left: 1000px;
+            transform: translate(1100px, 500px);
+            animation: box3 4s  infinite linear;
+
         }
 
         .box4 {
             background-color: orange;
-            top: 400px;
-            left: 0px;
+            transform: translate(0px, 500px);
+            animation: box4 4s infinite linear;
         }
     </style>
 </head>
