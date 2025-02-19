@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Sub 1 <input type="text" id="input1">
+    <br>
+    Sub 2 <input type="text" id="input2">
+    <br>
+    Sub 3 <input type="text" id="input2">
+    <br>
+    Sub 4 <input type="text" id="input2">
+    <br>
+    Sub 5 <input type="text" id="input2">
+    <br>
+    <button onclick="sumData()">Sum</button>
+    <br>
+    Total Marks <input type="text" id="result">
+    <br>
+    Percentage <input type="text" id="result">
+    <br>
+    Grade <input type="text" id="result">
+
+</body>
+<script>
+
+    var input1 = document.getElementById('input1');
+    var input2 = document.getElementById('input2');
+    var result = document.getElementById('result');
+
+    function sumData() {
+
+        var n1 = Number(input1.value);
+        var n2 = Number(input2.value);
+        result.value = n1 + n2
+
+    }
+
+
+</script>
+
+</html>
