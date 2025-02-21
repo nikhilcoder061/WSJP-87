@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            font-size: 25px;
+            align-items: center;
+        }
+
+        .main button {
+            font-size: 25px;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <button id="btn1" onclick="decs()">-</button>
+        <h1 id="num">1</h1>
+        <button id="btn2" onclick="inc()">+</button>
+    </div>
+
+</body>
+<script>
+
+    var num = document.getElementById('num');
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+
+    function inc() {
+        btn1.disabled = false;
+        num.innerText = Number(num.innerText) + 1;
+        if (num.innerText == 10) {
+            btn2.disabled = true
+        }
+    }
+
+    function decs() {
+        btn2.disabled = false
+        num.innerText = Number(num.innerText) - 1;
+        if (num.innerText == 0) {
+            btn1.disabled = true
+        }
+    }
+
+</script>
+
+</html>

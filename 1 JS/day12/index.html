@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Num1 <input type="text" id="input1">
+    <br>
+    <select name="" id="select">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <br>
+    Num2 <input type="text" id="input2">
+    <br>
+    <button onclick="calculate()">Calculate</button>
+    <br>
+    Result <input type="text" id="result">
+</body>
+<script>
+
+    var input1 = document.getElementById('input1');
+    var input2 = document.getElementById('input2');
+    var select = document.getElementById('select');
+    var result = document.getElementById('result');
+
+
+    function calculate() {
+        var n1 = Number(input1.value);
+        var n2 = Number(input2.value);
+
+        if (select.value == "+") {
+            result.value = n1 + n2
+        } else if (select.value == "-") {
+            result.value = n1 - n2
+        } else if (select.value == "*") {
+            result.value = n1 * n2
+        } else if (select.value == "/") {
+            result.value = n1 / n2
+        } else {
+            result.value = "Please enter a valid input"
+        }
+    }
+
+
+</script>
+
+</html>

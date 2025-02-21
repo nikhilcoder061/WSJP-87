@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <input type="text" name="" id="input" onkeyup="inputValue()">
+    <h1 id="heading"></h1>
+</body>
+<script>
+
+    var input = document.querySelector('#input');
+    var heading = document.querySelector('#heading');
+
+    function inputValue() {
+        heading.innerText = input.value
+        // console.log(input.value);
+    }
+
+</script>
+
+</html>
