@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .main {
+            width: 1000px;
+            padding: 50px;
+            background-color: lightblue;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="box"> Hello </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <button onclick="move()">Click Me</button>
+</body>
+<script>
+
+    var boxes = document.querySelectorAll('.box');
+    var index = 0;
+
+    function move() {
+
+        if (boxes[boxes.length - 1].innerText != "") {
+            boxes[0].innerText = boxes[boxes.length - 1].innerText;
+            boxes[boxes.length - 1].innerText = "";
+            index = 0;
+        } else {
+            console.log(index);
+            boxes[index + 1].innerText = boxes[index].innerText;
+            boxes[index].innerText = "";
+            index++;
+        }
+    }
+
+
+</script>
+
+</html>
