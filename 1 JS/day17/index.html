@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .slider {
+            width: 1000px;
+            height: 500px;
+            border: 5px solid blue;
+            margin: auto;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .sliderItem {
+            transition: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider">
+        <div class="sliderItem">
+            <img src="https://picsum.photos/id/231/1000/500" alt="">
+        </div>
+        <div class="sliderItem">
+            <img src="https://picsum.photos/id/232/1000/500" alt="">
+        </div>
+        <div class="sliderItem">
+            <img src="https://picsum.photos/id/233/1000/500" alt="">
+        </div>
+        <div class="sliderItem">
+            <img src="https://picsum.photos/id/234/1000/500" alt="">
+        </div>
+        <div class="sliderItem">
+            <img src="https://picsum.photos/id/235/1000/500" alt="">
+        </div>
+        <div class="sliderItem">
+            <img src="https://picsum.photos/id/236/1000/500" alt="">
+        </div>
+    </div>
+    <button id="prev">Prev</button>
+    <button id="next">Next</button>
+
+</body>
+<script>
+
+    var next = document.querySelector('#next');
+    var prev = document.querySelector('#prev');
+    var allSliderItem = document.querySelectorAll('.sliderItem');
+    var count = 0;
+
+    next.addEventListener(
+        'click', function () {
+            if (allSliderItem.length - 1 > count) { // 6-1 > 5 => false
+                count++;
+                for (var slider of allSliderItem) {
+                    slider.style.transform = `translateX(-${count * 100}%)`;
+                }
+            }
+        }
+    )
+
+    prev.addEventListener(
+        'click', function () {
+            if (count >= 1) {
+                count--;
+                for (var slider of allSliderItem) {
+                    slider.style.transform = `translateX(-${count * 100}%)`;
+                }
+            }
+        }
+    )
+
+
+</script>
+
+</html>

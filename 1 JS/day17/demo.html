@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .main {
+            width: 1000px;
+            height: 600px;
+            margin: auto;
+            padding: 30px 0px;
+        }
+
+        .item {
+            border: 1px solid gray;
+            margin: 10px 0px;
+
+        }
+
+        .que {
+            background-color: gray;
+            padding: 10px 20px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .ans {
+            padding: 10px 20px;
+            background-color: white;
+            display: none;
+        }
+
+        .showAns {
+            display: block;
+        }
+
+        .que i {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            transition: 0.1s;
+        }
+
+        .rotateArrow{
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="item">
+            <div class="que">What is HTML?
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="ans">HTML stands for HyperText Markup Language. It is used to structure web pages.</div>
+        </div>
+
+        <div class="item">
+            <div class="que">What is CSS?
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="ans">CSS stands for Cascading Style Sheets. It is used to style and layout web pages.</div>
+        </div>
+
+        <div class="item">
+            <div class="que">What is JavaScript?
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="ans">JavaScript is a programming language used to make web pages interactive.</div>
+        </div>
+
+        <div class="item">
+            <div class="que">What is the difference between id and class in HTML?
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="ans">An id is unique and used for a single element, while a class can be used for multiple
+                elements.</div>
+        </div>
+
+        <div class="item">
+            <div class="que">What is responsive web design?
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="ans">Responsive web design makes web pages look good on different devices by using flexible
+                layouts.</div>
+        </div>
+
+    </div>
+</body>
+<script>
+
+    var allQuestion = document.querySelectorAll('.que');
+
+    for (var question of allQuestion) {
+        question.addEventListener(
+            'click', function (event) {
+                this.nextElementSibling.classList.toggle('showAns');
+                this.children[0].classList.toggle('rotateArrow');
+            }
+        )
+    }
+
+</script>
+
+</html>
