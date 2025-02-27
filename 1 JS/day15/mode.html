@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .model {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            position: relative;
+            transform: translateY(-180%);
+            transition: 0.5s;
+        }
+
+        .model span {
+            position: absolute;
+            right: 10px;
+            font-size: 20px;
+            color: red;
+            cursor: pointer;
+        }
+
+        .showModel {
+            transform: translate(0px);
+        }
+
+        .overlay {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"> </div>
+    <button id="btn">Click Me</button>
+    <div class="main">
+        <div class="model">
+            <span>X</span>
+        </div>
+    </div>
+</body>
+<script>
+
+    var model = document.querySelector('.model');
+    var btn = document.querySelector('#btn');
+    var close = document.querySelector('.model>span');
+    var overlay = document.querySelector('.overlay');
+
+    btn.addEventListener('click', function () {
+        model.classList.add('showModel');
+        overlay.style.display = 'block';
+    })
+
+    close.addEventListener(
+        'click', function () {
+            model.classList.remove('showModel');
+            overlay.style.display = '';
+        }
+    )
+    overlay.addEventListener(
+        'click', function () {
+            model.classList.remove('showModel');
+            overlay.style.display = '';
+        }
+    )
+
+
+
+</script>
+
+</html>

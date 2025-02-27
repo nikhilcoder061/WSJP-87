@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .main {
+            width: 1000px;
+            height: 300px;
+            background-color: lightblue;
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+            align-items: center;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="box">hello1</div>
+        <div class="box">hello2</div>
+        <div class="box">hello3</div>
+        <div class="box">hello4</div>
+        <div class="box">hello5</div>
+    </div>
+    <button onclick="move()">Move</button>
+</body>
+<script>
+
+    var boxes = document.querySelectorAll('.box');
+
+    function move() {
+        var lastValue = boxes[boxes.length - 1].innerText;
+        for (var i = boxes.length - 1; i >= 1; i--) {
+            boxes[i].innerText = boxes[i - 1].innerText; // 
+        }
+        boxes[0].innerText = lastValue;
+    }
+
+
+</script>
+
+</html>

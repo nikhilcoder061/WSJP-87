@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .todo-container {
+            background-color: #ffffff;
+            width: 500px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .todo-header {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .todo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 20px;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background-color: #fafafa;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .todo-item span {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .todo-item button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .todo-item button:hover {
+            background-color: #fb8c00;
+        }
+
+        .input-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .input-container input {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .input-container button {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .input-container button:hover {
+            background-color: #1976d2;
+        }
+
+        .doneToDo {
+            background-color: gray;
+        }
+
+        .doneToDo span {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="todo-container">
+        <div class="todo-header">My To-Do List</div>
+
+        <!-- Input container to add new todo -->
+        <div class="input-container">
+            <input type="text" placeholder="Enter a new to-do" id="todo-input" />
+            <button id="addToDo">Add To-Do</button>
+        </div>
+
+        <!-- List of to-dos -->
+        <ul class="todo-list">
+            <li class="todo-item" onclick="selectToDo(this)" oncontextmenu="deleteList(this)">
+                <span>Buy groceries</span>
+                <button onclick="deleteToDo(this)">Delete</button>
+            </li>
+        </ul>
+
+    </div>
+
+</body>
+<script>
+
+    var todoInput = document.querySelector('#todo-input');
+    var addToDo = document.querySelector('#addToDo');
+    var toDoList = document.querySelector('.todo-list');
+
+    // add to do on click start
+    addToDo.addEventListener(
+        'click', addNewToDo
+    )
+    // add to do on click end
+
+    //add todo on enter button start 
+
+    todoInput.addEventListener(
+        'keyup', function (event) {
+            console.log(event);
+            if (event.key == "Enter") {
+                addNewToDo();
+            }
+        }
+    )
+
+    //add todo on enter button End
+
+    function addNewToDo() {
+        if (todoInput.value != '') {
+            toDoList.innerHTML = toDoList.innerHTML + `<li class="todo-item " onclick="selectToDo(this)" oncontextmenu="deleteList(this)">
+                                            <span>${todoInput.value}</span>
+                                            <button onclick="deleteToDo(this)">Delete</button>
+                                        </li>`;
+
+            todoInput.value = "";
+        }
+    }
+
+    // select to start 
+    function selectToDo(list) {
+        list.classList.toggle('doneToDo');
+    }
+    // select to end
+
+    // delete todo when click on button start
+    function deleteToDo(listBtn) {
+        listBtn.parentNode.remove();
+    }
+    // delete todo when click on button end
+
+
+    // delete todo on right click start 
+    function deleteList(list) {
+        list.remove();
+    }
+    // delete todo on right click end
+
+
+
+
+</script>
+
+</html>

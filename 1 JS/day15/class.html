@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para {
+            font-size: 20px;
+            color: red;
+            background-color: lightblue;
+            transition: 1s;
+        }
+
+        .text {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="addClass">Add</button>
+    <button id="removeClass">Remove</button>
+    <button id="toggleClass">toggle</button>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae quos praesentium, perspiciatis ipsa
+        error dicta quo, ducimus, reprehenderit eligendi nulla dolorem alias nesciunt impedit magni fugit deleniti
+        facere accusamus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae quos praesentium, perspiciatis ipsa
+        error dicta quo, ducimus, reprehenderit eligendi nulla dolorem alias nesciunt impedit magni fugit deleniti
+        facere accusamus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae quos praesentium, perspiciatis ipsa
+        error dicta quo, ducimus, reprehenderit eligendi nulla dolorem alias nesciunt impedit magni fugit deleniti
+        facere accusamus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae quos praesentium, perspiciatis ipsa
+        error dicta quo, ducimus, reprehenderit eligendi nulla dolorem alias nesciunt impedit magni fugit deleniti
+        facere accusamus.
+    </p>
+</body>
+<script>
+
+    var addClass = document.querySelector('#addClass');
+    var removeClass = document.querySelector('#removeClass');
+    var toggleClass = document.querySelector('#toggleClass');
+    var paragraph = document.querySelector('p');
+
+    addClass.addEventListener(
+        'click',
+        function () {
+            paragraph.classList.add('para');
+            paragraph.classList
+        }
+    )
+
+    removeClass.addEventListener(
+        'click', function () {
+            paragraph.classList.remove('para')
+        }
+    )
+
+    toggleClass.addEventListener(
+        'click', function () {
+            paragraph.classList.toggle('para')
+        }
+    )
+
+
+</script>
+
+</html>
