@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gallery img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <img src="https://picsum.photos/id/231/700/500" alt="">
+    </div>
+    <div class="gallery">
+        <img src="https://picsum.photos/id/232/700/500" alt="" onmouseleave="">
+        <img src="https://picsum.photos/id/233/700/500" alt="">
+        <img src="https://picsum.photos/id/234/700/500" alt="">
+        <img src="https://picsum.photos/id/235/700/500" alt="">
+        <img src="https://picsum.photos/id/236/700/500" alt="">
+        <img src="https://picsum.photos/id/237/700/500" alt="">
+    </div>
+</body>
+<script>
+
+    var mainImg = document.querySelector('.main img');
+    var galleryImg = document.querySelectorAll('.gallery img')
+
+    for (var img of galleryImg) {
+        img.addEventListener(
+            'mouseenter', function () {
+                mainImg.src = this.src;
+                // console.log(this.src);
+            }
+        )
+
+        img.addEventListener(
+            'mouseleave', function () {
+                mainImg.src = 'https://picsum.photos/id/231/700/500'
+            }
+        )
+    }
+
+
+</script>
+
+</html>
