@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            background-color: lightcyan;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .clock {
+            width: 600px;
+            height: 400px;
+            background-color: lightgrey;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            padding: 15px 20px;
+            background-color: rgb(61, 61, 219);
+            border: 3px solid rgb(61, 61, 219);
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: transparent;
+            color: black;
+        }
+
+        h1 {
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="clock">
+            <button>12 Hour</button>
+            <h1>10:00:00</h1>
+        </div>
+    </div>
+
+</body>
+<script>
+
+    var currentTime = document.querySelector('.clock h1');
+    var btn = document.querySelector('.clock button');
+    var flag = false; // true => 24 hour,  False => 12 Hour
+
+    function getCurrentTime() {
+        var currentData = new Date();
+        var hours = currentData.getHours();
+        var minutes = currentData.getMinutes();
+        var seconds = currentData.getSeconds();
+        
+
+        if (flag && hours > 12) {
+            hours -= 12
+        }
+
+        if (seconds < 10) seconds = "0" + seconds;
+        if (minutes < 10) minutes = "0" + minutes;
+        if (hours < 10) hours = "0" + hours;
+
+        currentTime.innerText = `${hours}:${minutes}:${seconds}`
+    }
+
+    setInterval(getCurrentTime, 1000)
+
+    getCurrentTime();
+
+    btn.addEventListener('click', function () {
+        flag = !flag;
+        if (flag == true) {
+            btn.innerText = "24 Hour"
+        } else {
+            btn.innerText = "12 Hour"
+        }
+
+        getCurrentTime();
+    })
+
+</script>
+
+</html>
