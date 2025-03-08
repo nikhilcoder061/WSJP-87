@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    max-width: 1200px;
+    padding: 20px;
+    background-color: lightblue;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.box{
+    width: 23%;
+    background-color: aqua;
+    padding: 10px;
+}

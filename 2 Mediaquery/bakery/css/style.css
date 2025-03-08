@@ -1,0 +1,114 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background: url(../img/banner-bg.jpg) center center;
+    background-size: cover;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 9, 30, 0.5);
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.top-header {
+    max-width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    display: none;
+    color: white;
+}
+
+.icons,
+.contact {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+}
+
+header {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+}
+
+.navMenu {
+    display: flex;
+    gap: 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: absolute;
+    transition: 0.2s;
+    flex-direction: column;
+    color: white;
+    background-color: rgba(19, 17, 17, 0.747);
+    top: 0px;
+    left: -70%;
+    width: 70%;
+    height: 100vh;
+    padding-left: 40px;
+    padding-top: 50px;
+}
+
+.mobileMenu {
+    font-size: 25px;
+}
+
+main {
+    width: 600px;
+    margin: auto;
+}
+
+main p {
+    font-size: 25px;
+}
+
+.showMobileMenu {
+    left: 0px !important;
+}
+
+.bg_header {
+    width: 100%;
+    height: 87px;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: none;
+    z-index: 1;
+    box-shadow: 0px 0px 25px 5px #ccc;
+}
+
+.show_bg_header {
+    display: block;
+}
+
+.stickyHeader {
+    width: 1140px;
+    position: fixed;
+    top: 0px;
+    z-index: 9999;
+}
