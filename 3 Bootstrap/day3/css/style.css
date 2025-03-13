@@ -1,0 +1,22 @@
+.main {
+    background-color: lightblue;
+}
+
+/* .main1 {
+    background-color: red;
+} */
+
+.box {
+    width: 300px;
+    border: 1px solid black;
+}
+
+.row1 {
+    background-color: lightcoral;
+    margin: 10px 0px;
+}
+.column{
+    border: 1px solid black;
+    height: 50px;
+    text-align: center;
+}
