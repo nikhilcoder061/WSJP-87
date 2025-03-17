@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // function addData(...data) {
+    //     sum = 0;
+    //     for (var i of data) {
+    //         sum += i
+    //     }
+    //     console.log(sum);
+    // }
+
+    // addData(10, 20,30);
+
+    // what is diffrence between call by value and call by reference ?
+
+
+    // var arr = [10, 20, 30, 40];
+    // var arr1 = arr;  // Deep Copy
+    // var arr2 = [50, 60, ...arr]; //[10,20,30,40,50,60]
+
+
+    // arr.push(50);
+    // // arr2.pop();
+
+    // console.log(arr);
+    // console.log(arr1);
+    // console.log(arr2);
+
+
+
+    // const addData = (a, b) => {
+    //     console.log(a + b);
+    // }
+
+
+    // function addData(a, b) {
+    //     console.log(a + b);
+    // }
+
+    // addData(10, 20);
+
+
+    // const arr = [12, 13, 6, 11, 25, 14, 19];
+
+    // const newArr = arr.map(
+    //     (value, index) => {
+    //         return value * 2
+    //     }
+    // )
+
+    // console.log(newArr);
+
+    // const arr = ['hello', 'ws', 'wscubetect', 'jaipur', 'kota', 'delhi'];
+
+    // const newArr = arr.map(
+    //     (value, index) => {
+    //         return value.toUpperCase()
+    //     }
+    // )
+
+    // console.log(newArr);
+
+
+    const userData = [
+        {
+            name: "Alice Johnson",
+            email: "alice.johnson@example.com",
+            phone: "+1234567890",
+            age: 28,
+            city: "New York"
+        },
+        {
+            name: "Bob Smith",
+            email: "bob.smith@example.com",
+            phone: "+1234567891",
+            age: 34,
+            city: "Los Angeles"
+        },
+        {
+            name: "Charlie Brown",
+            email: "charlie.brown@example.com",
+            phone: "+1234567892",
+            age: 22,
+            city: "Chicago"
+        },
+        {
+            name: "David White",
+            email: "david.white@example.com",
+            phone: "+1234567893",
+            age: 45,
+            city: "Houston"
+        },
+        {
+            name: "Eva Green",
+            email: "eva.green@example.com",
+            phone: "+1234567894",
+            age: 30,
+            city: "Phoenix"
+        },
+        {
+            name: "Frank Black",
+            email: "frank.black@example.com",
+            phone: "+1234567895",
+            age: 39,
+            city: "Philadelphia"
+        },
+        {
+            name: "Grace Lee",
+            email: "grace.lee@example.com",
+            phone: "+1234567896",
+            age: 25,
+            city: "San Antonio"
+        },
+        {
+            name: "Hank Miller",
+            email: "hank.miller@example.com",
+            phone: "+1234567897",
+            age: 40,
+            city: "San Diego"
+        },
+        {
+            name: "Ivy Turner",
+            email: "ivy.turner@example.com",
+            phone: "+1234567898",
+            age: 31,
+            city: "Dallas"
+        },
+        {
+            name: "Jack Wilson",
+            email: "jack.wilson@example.com",
+            phone: "+1234567899",
+            age: 26,
+            city: "Austin"
+        }
+    ];
+
+    // const newUserData = userData.map(
+    //     (value, index) => {
+    //         return value.age > 30
+    //     }
+    // )
+
+    // console.log(newUserData);
+
+
+    // const filterData = userData.filter(
+    //     (value, index) => {
+    //         return value.name.includes('o')
+    //     }
+    // )
+    // console.log(filterData);
+
+
+    const arr = [12, 13, 6, 11, 25, 14, 19, 28, 33, 32];
+
+    const newArr = arr.filter(
+        (value, index) => {
+            return value % 2 == 0
+        }
+    )
+
+    console.log(newArr);
+
+
+
+
+</script>
+
+</html>
