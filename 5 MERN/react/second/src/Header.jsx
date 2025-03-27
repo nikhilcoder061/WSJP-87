@@ -1,14 +1,11 @@
-function Header() {
+function Header(data) {
 
-    const a = 10;
-    const b = 20;
-
-    const c = a + b;
-    console.log(c);
-    const d= "India"
 
     return (
-        <h1>Welcome to Header Section  {c} {d} </h1>
+        <>
+            {data.uname}, {data.uemail}, {data.uphone}
+            <h1> Welcome to Header Section  </h1 >
+        </>
     )
 }
 

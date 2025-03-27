@@ -1,20 +1,19 @@
 import Card from "./Card"
+import Counter from "./Counter"
 import Footer from "./Footer"
 import Header from "./Header"
+import Layout from "./Layout"
+import ShowPass from "./ShowPass"
 
 function App() {
 
   return (
     <>
-      <Header />
-      <div className="d-flex gap-3">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
-      <Footer />
+      {/* <Counter price={200} />
+      <Counter price={300} />
+      <Counter price={100} />
+      <Counter price={50} /> */}
+      <ShowPass/>
     </>
   )
 }
