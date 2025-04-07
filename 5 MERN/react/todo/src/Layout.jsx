@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Input from './Input'
 import Display from './Display'
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Layout() {
 
@@ -10,6 +11,7 @@ export default function Layout() {
         const finalData = [...allToDo];
         finalData.push(data);
         setAllToDo(finalData);
+        toast.success("Todo is added")
     }
 
     const deleteList = (listIndex) => {
@@ -20,6 +22,7 @@ export default function Layout() {
             }
         )
         setAllToDo(finalData);
+        toast.success("Todo is deleted")
     }
 
 
@@ -27,6 +30,7 @@ export default function Layout() {
         <div className='max-w-xl mx-auto'>
             <Input getValue={getValue} />
             <Display allToDo={allToDo} deleteList={deleteList} />
+            <ToastContainer autoClose={500} />
         </div>
     )
 }
