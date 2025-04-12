@@ -7,6 +7,7 @@ import Contact from './Pages/Contact'
 import Layout from './Layout'
 import Shop from './Pages/Shop'
 import ProductDetails from './Pages/ProductDetails'
+import MainContext from './Pages/MainContext'
 
 export default function App() {
 
@@ -48,7 +49,9 @@ export default function App() {
 
   return (
     <>
-      <RouterProvider router={routes} />
+      <MainContext>
+        <RouterProvider router={routes} />
+      </MainContext>
     </>
   )
 }

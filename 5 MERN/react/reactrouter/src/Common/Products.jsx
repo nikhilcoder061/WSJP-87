@@ -1,11 +1,13 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { Context } from '../Pages/MainContext';
 
 export default function Products({ slug, rating, price }) {
 
     const [allProducts, setAllProducts] = useState([]);
     const [limit, setLimit] = useState(20);
+    const { cart, setCart } = useContext(Context);
 
 
     const getProducts = () => {
@@ -50,7 +52,7 @@ export default function Products({ slug, rating, price }) {
                     allProducts.map(
                         (product, index) => {
                             return (
-                                <ProductCard key={index} product={product} />
+                                <ProductCard key={index} product={product} cart={cart} setCart={setCart} />
                             )
                         }
                     )
@@ -64,7 +66,7 @@ export default function Products({ slug, rating, price }) {
     )
 }
 
-function ProductCard({ product }) {
+function ProductCard({ product, cart, setCart }) {
 
     return (
         <div className="max-w-sm bg-white rounded-2xl shadow-lg border p-4 hover:shadow-xl transition-all">
@@ -82,7 +84,7 @@ function ProductCard({ product }) {
                     <p className="text-sm text-gray-500">Brand: {product.brand}</p>
                 </div>
             </Link>
-            <button className='bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-white'>Add to Cart</button>
+            <button onClick={() => setCart(cart + 1)} className='bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-white'>Add to Cart</button>
         </div>
     )
 }

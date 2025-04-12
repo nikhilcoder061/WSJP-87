@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../Common/Header'
 import Footer from '../Common/Footer'
 
 export default function Contact() {
+
     return (
         <>
             <h1 className='text-7xl text-center'>Welcome to Contact Page</h1>

@@ -1,12 +1,14 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Context } from './MainContext';
 
 export default function ProductDetails() {
 
     const [productDetail, setProductDetail] = useState({});
 
     const { productId } = useParams();
+    const { cart, setCart } = useContext(Context);
 
     const getProductDetail = () => {
         axios.get(`https://dummyjson.com/products/${productId}`).then(
@@ -64,7 +66,7 @@ export default function ProductDetails() {
                     <p className="text-gray-700 mb-6">
                         {productDetail.description}
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-all">
+                    <button onClick={() => setCart(cart + 1)} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-all">
                         Add to Cart
                     </button>
                 </div>
