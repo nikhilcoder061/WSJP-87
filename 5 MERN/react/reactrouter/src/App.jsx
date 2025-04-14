@@ -8,6 +8,7 @@ import Layout from './Layout'
 import Shop from './Pages/Shop'
 import ProductDetails from './Pages/ProductDetails'
 import MainContext from './Pages/MainContext'
+import Cart from './Pages/Cart'
 
 export default function App() {
 
@@ -40,6 +41,10 @@ export default function App() {
           {
             path: '/productdetail/:productId',
             element: <ProductDetails />
+          },
+          {
+            path: '/cart',
+            element: <Cart />
           }
         ]
       }

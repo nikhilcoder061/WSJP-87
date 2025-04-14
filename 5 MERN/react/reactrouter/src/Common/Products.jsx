@@ -68,6 +68,17 @@ export default function Products({ slug, rating, price }) {
 
 function ProductCard({ product, cart, setCart }) {
 
+
+    const addToCart = () => {
+        const { id, category, title, price, thumbnail } = product;
+
+        const productDetail = { id, category, title, price, thumbnail, qty: 1 };
+        const finalData = [...cart, productDetail];
+        setCart(finalData);
+
+    }
+
+
     return (
         <div className="max-w-sm bg-white rounded-2xl shadow-lg border p-4 hover:shadow-xl transition-all">
             <Link to={`/productdetail/${product.id}`}>
@@ -84,7 +95,7 @@ function ProductCard({ product, cart, setCart }) {
                     <p className="text-sm text-gray-500">Brand: {product.brand}</p>
                 </div>
             </Link>
-            <button onClick={() => setCart(cart + 1)} className='bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-white'>Add to Cart</button>
+            <button onClick={addToCart} className='bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-white'>Add to Cart</button>
         </div>
     )
 }

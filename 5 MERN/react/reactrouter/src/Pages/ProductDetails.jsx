@@ -66,7 +66,7 @@ export default function ProductDetails() {
                     <p className="text-gray-700 mb-6">
                         {productDetail.description}
                     </p>
-                    <button onClick={() => setCart(cart + 1)} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-all">
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-all">
                         Add to Cart
                     </button>
                 </div>

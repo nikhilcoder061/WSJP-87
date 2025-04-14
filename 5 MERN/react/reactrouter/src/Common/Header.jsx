@@ -26,8 +26,10 @@ export default function Header() {
                     <Link to={'/shop'}>
                         Shop
                     </Link>
-                    <button className='bg-orange-500 hover:bg-orange-600 p-2 px-3 rounded-lg'>Cart ({cart})</button>
-                    <button onClick={() => setCart(0)} className='bg-gray-500 hover:bg-gray-600 p-2 px-3 rounded-lg'>Clear Cart</button>
+                    <Link to={'/cart'}>
+                        <button className='bg-orange-500 hover:bg-orange-600 p-2 px-3 rounded-lg'>Cart ({cart.length})</button>
+                    </Link>
+                    <button onClick={() => setCart([])} className='bg-gray-500 hover:bg-gray-600 p-2 px-3 rounded-lg'>Clear Cart</button>
                 </nav>
             </div>
         </header>
