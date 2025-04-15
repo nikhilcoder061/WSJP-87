@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Context } from '../Pages/MainContext';
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Products({ slug, rating, price }) {
 
@@ -71,10 +72,25 @@ function ProductCard({ product, cart, setCart }) {
 
     const addToCart = () => {
         const { id, category, title, price, thumbnail } = product;
-
         const productDetail = { id, category, title, price, thumbnail, qty: 1 };
-        const finalData = [...cart, productDetail];
-        setCart(finalData);
+
+        const matchProduct = cart.filter(
+            (cartData, cartIndex) => {
+                // console.log(cartData.id); //1 ,2,3
+                return cartData.id == productDetail.id; // 1 ==4 => false
+                // 2 == 4 => false
+                // 3 == 4 => false
+            }
+        )
+
+        if (matchProduct.length == 0) {
+            const finalData = [...cart, productDetail];
+            setCart(finalData);
+            toast.success("Added in Cart");
+        } else {
+            toast.error("Already in Cart");
+        }
+
 
     }
 

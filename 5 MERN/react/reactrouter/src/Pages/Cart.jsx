@@ -1,11 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Context } from './MainContext'
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Cart() {
 
     const { cart, setCart } = useContext(Context);
+    const [totalPrice, setTotalPrice] = useState(0);
 
+
+    useEffect(
+        () => {
+            let totalCartPrice = 0
+            cart.forEach(
+                (cartData, cartIndex) => {
+                    totalCartPrice += (cartData.price * cartData.qty);
+                }
+            )
+            setTotalPrice(totalCartPrice);
+        }, [cart]
+    )
 
     return (
         <div className="min-h-screen bg-gray-100 p-6">
@@ -33,16 +47,16 @@ export default function Cart() {
                     <h3 className="text-xl font-semibold mb-4">Summary</h3>
                     <div className="flex justify-between mb-2">
                         <span>Subtotal</span>
-                        <span>₹999</span>
+                        <span>₹{totalPrice.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between mb-2">
                         <span>Shipping</span>
-                        <span>₹50</span>
+                        <span>₹{(totalPrice * 10 / 100).toFixed(2)}</span>
                     </div>
                     <hr className="my-2" />
                     <div className="flex justify-between font-bold text-lg">
                         <span>Total</span>
-                        <span>₹1049</span>
+                        <span>{(totalPrice + (totalPrice * 10 / 100)).toFixed(2)}</span>
                     </div>
                     <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
                         Checkout
@@ -61,6 +75,13 @@ function CartRow({ cartData, cartIndex, setCart, cart }) {
         cartData.splice(index, 1);
 
         setCart(cartData)
+        toast.success("Item deleted");
+    }
+
+    const qtyUpdate = (event, indexNum) => {
+        const oldCartData = [...cart];
+        oldCartData[indexNum].qty = event.target.value;
+        setCart(oldCartData);
     }
 
     return (
@@ -72,6 +93,7 @@ function CartRow({ cartData, cartIndex, setCart, cart }) {
             />
             <div className="ml-4 flex-1">
                 <Link to={`/productdetail/${cartData.id}`}>
+                    <h2 className="text-lg font-semibold">{cartData.id}</h2>
                     <h2 className="text-lg font-semibold">{cartData.title}</h2>
                 </Link>
                 <p className="text-sm text-gray-500">Category: {cartData.category}</p>
@@ -83,6 +105,7 @@ function CartRow({ cartData, cartIndex, setCart, cart }) {
                         defaultValue={cartData.qty}
                         min={1}
                         className="w-16 px-2 py-1 border rounded-md"
+                        onChange={() => qtyUpdate(event, cartIndex)}
                     />
                 </div>
             </div>
