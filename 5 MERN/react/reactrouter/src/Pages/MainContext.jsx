@@ -6,8 +6,10 @@ export const Context = createContext();
 export default function MainContext({ children }) {
 
     const oldCartData = JSON.parse(localStorage.getItem("CART")) ?? [];
+    const userToken = localStorage.getItem('token') ?? '';
 
     const [cart, setCart] = useState(oldCartData);
+    const [user, setUser] = useState(userToken);
 
     useEffect(
         () => {
@@ -15,9 +17,15 @@ export default function MainContext({ children }) {
         }, [cart]
     )
 
+    useEffect(
+        () => {
+            localStorage.setItem('token', user);
+        }, [user]
+    )
+
     return (
         <>
-            <Context.Provider value={{ cart, setCart }}>
+            <Context.Provider value={{ cart, setCart, user, setUser }}>
                 {children}
                 <ToastContainer autoClose={1000} />
             </Context.Provider>
